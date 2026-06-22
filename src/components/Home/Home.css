@@ -1,0 +1,140 @@
+/* ===== UMUMIY ===== */
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.logo {
+    width: 100%;
+    min-height: 100vh;
+    object-fit: cover;
+    display: block;
+}
+
+.header {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* ===== BUTTON ===== */
+
+.era-btn {
+    width: 300px;
+    height: 120px;
+    font-size: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: -150px;
+
+    background-color: rgb(231, 228, 213);
+    border: none;
+    border-radius: 25px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #d08171;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.era-btn:hover {
+    background-color: rgba(231, 228, 213, 0.8);
+}
+
+.arrow {
+    font-size: 70px;
+    transition: transform 0.3s ease;
+}
+
+.era-btn:hover .arrow {
+    transform: translateX(8px);
+}
+
+/* ===== TABLET ===== */
+
+@media (max-width: 1024px) {
+    .header {
+        top: 70%;
+    }
+
+    .era-btn {
+        width: 260px;
+        height: 100px;
+        font-size: 38px;
+    }
+
+    .arrow {
+        font-size: 55px;
+    }
+}
+
+/* ===== KATTA TELEFON ===== */
+
+@media (max-width: 768px) {
+    .header {
+        top: 75%;
+    }
+
+    .era-btn {
+        width: 220px;
+        height: 85px;
+        font-size: 30px;
+        border-radius: 18px;
+    }
+
+    .arrow {
+        font-size: 45px;
+    }
+}
+
+/* ===== TELEFON ===== */
+
+@media (max-width: 480px) {
+    .logo {
+        min-height: 100vh;
+        object-fit: cover;
+    }
+
+    .header {
+        top: 80%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .era-btn {
+        width: 180px;
+        height: 70px;
+        font-size: 24px;
+        border-radius: 15px;
+    }
+
+    .arrow {
+        font-size: 35px;
+    }
+}
+
+/* ===== JUDA KICHIK TELEFONLAR ===== */
+
+@media (max-width: 360px) {
+    .era-btn {
+        width: 160px;
+        height: 65px;
+        font-size: 20px;
+    }
+
+    .arrow {
+        font-size: 30px;
+    }
+
+    .logo{
+        width: 100px;
+    }
+}

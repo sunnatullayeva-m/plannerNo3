@@ -1,0 +1,196 @@
+.board-display {
+  padding: 20px;
+  background: #f0ecec;
+}
+
+.item-full {
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.main-textarea {
+  width: 500px;
+  flex-grow: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+
+}
+
+.item-full {
+  width: 200px;
+  background: white;
+  padding: 15px;
+  margin: 10px;
+  border: 1px solid #000;
+  color: black;
+}
+
+
+.time-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 20px;
+  width: 1100px;
+}
+
+.time-left {
+  width: 100px;
+  margin-left: 50px;
+}
+
+.time-right {
+  width: 650px;
+  margin-left: - 400px;
+}
+
+.hour-box,
+.task-box {
+  width: 400px;
+  height: 60px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.time-input {
+  margin-left: 10px;
+  padding: 5px;
+}
+
+.left-div {
+  width: 700px;
+  background: #e5e0dc;
+  border-radius: 8px;
+}
+
+
+
+.task-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background: #f0f0f0;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.drag-handle {
+  cursor: grab;
+  color: #888;
+  font-size: 18px;
+  user-select: none;
+}
+
+.task-input {
+  border: none;
+  background: transparent;
+  width: 100%;
+  font-size: 16px;
+  outline: none;
+}
+
+.task-input:focus {
+  background: #e8e8e8;
+  border-radius: 4px;
+}
+
+
+.task-box {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background: white;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.task-box.done {
+  background-color: #c3e6cb !important;
+  border-color: #28a745 !important;
+}
+
+.task-box.done .task-input {
+  background-color: transparent !important;
+  text-decoration: line-through !important;
+  color: #28a745 !important;
+}
+
+.task-actions {
+  display: flex;
+  gap: 5px;
+  margin-left: auto;
+}
+
+.check-btn {
+  color: green;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.delete-btn {
+  color: red;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+
+@media screen and (max-width: 600px) {
+  .time-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    padding: 5px;
+    width: 500px;
+    margin-left: -5px;
+  }
+
+  .left-div {
+    width: 35% !important;
+    margin: 0 !important;
+  }
+
+  .time-right {
+    width: 65% !important;
+    margin: 0 !important;
+  }
+
+
+   .hour-box{
+     width: 100px;
+    padding: 5px 2px;
+    font-size: 12px;
+    margin-left: -30px;
+   }
+ 
+  .task-box {
+    width: 250px;
+    padding: 5px 2px;
+    font-size: 12px;
+  }
+
+  .hour-box select {
+    width: 35px;
+    font-size: 10px;
+    text-align: center;
+  }
+}

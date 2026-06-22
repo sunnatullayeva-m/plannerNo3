@@ -1,0 +1,175 @@
+
+
+ .table-wrapper {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.months {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 90px;
+  margin-left: 100px;
+  margin-top: 40px;
+}
+
+.btn-month {
+  width: 150px;
+  padding: 10px;
+  cursor: pointer;
+  border: 1px solid #999;
+  border-radius: 5px;
+  background: white;
+ 
+}
+
+.btn-month:hover {
+  background: #f0f0f0;
+}
+
+.btn-month.active {
+  background: #d08171;
+  color: white;
+}
+
+.calendar {
+  width: 1000px;
+  min-height: 350px;
+  background: #ede9e7;
+  color: black;
+  padding: 20px;
+  border-radius: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 100px;
+ }
+
+.calendar .header {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-size: 28px;
+  color: rgb(80, 78, 78);
+  margin-left: -150px;
+}
+
+.calendar .grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 18px;
+  color: rgb(80, 78, 78);
+  border: none;
+}
+
+.has-tasks {
+  background: #c49a96;
+  color: white;
+  font-weight: bold;
+  border-radius: 80px;
+  border: none;
+}
+
+.calendar .dayname {
+  font-size: 17px;
+  color: #d08171;
+  text-align: center;
+  font-weight: 500;
+  margin-top: 40px;
+}
+
+.calendar .cell {
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 6px;
+  border: none;
+}
+
+.calendar .cell:hover {
+  background: #d8d2cf;
+ 
+  border-radius: 50px;
+}
+
+
+
+@media (max-width: 1024px) {
+  .table-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .months {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .btn-month {
+    width: 80px;
+    font-size: 12px;
+  }
+
+  .calendar {
+    width: 95%;
+    margin-left: 0;
+  }
+
+  .calendar .header {
+    font-size: 22px;
+  }
+
+  .calendar .cell {
+    padding: 12px;
+  }
+}
+
+/* ===================== */
+/* 📱 MOBILE */
+/* ===================== */
+@media (max-width: 600px) {
+  .table-wrapper {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .months {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 5px;
+  }
+
+  .btn-month {
+    width: 70px;
+    padding: 6px;
+    font-size: 11px;
+  }
+
+  .calendar {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  .calendar .header {
+    font-size: 18px;
+  }
+
+  .calendar .grid {
+    gap: 8px;
+  }
+
+  .calendar .cell {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .calendar .dayname {
+    font-size: 12px;
+    margin-top: 20px;
+  }
+}
