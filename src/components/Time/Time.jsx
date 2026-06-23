@@ -28,6 +28,28 @@ function Time() {
     return () => clearInterval(interval);
   }, [currentTasks.board]);
 
+  const onHourDragStart = (e, index) => {
+    e.dataTransfer.setData('hourIndex', index);
+  };
+
+  const handleHourDrop = (e, targetIndex) => {
+    e.preventDefault();
+
+    const sourceIndex = parseInt(
+      e.dataTransfer.getData('hourIndex')
+    );
+
+    if (isNaN(sourceIndex)) return;
+
+    const newHours = [...hours];
+    const draggedHour = newHours[sourceIndex];
+
+    newHours.splice(sourceIndex, 1);
+    newHours.splice(targetIndex, 0, draggedHour);
+
+    setHours(newHours);
+  };
+
   const onDragStart = (e, index, type) => {
     e.dataTransfer.setData('index', index);
     e.dataTransfer.setData('type', type);
@@ -43,7 +65,7 @@ function Time() {
       const draggedItem = newBoard[sourceIndex];
       newBoard.splice(sourceIndex, 1);
       newBoard.splice(targetIndex, 0, draggedItem);
-      
+
       setTasks((prev) => ({
         ...prev,
         [selectedDate]: { ...prev[selectedDate], board: newBoard },
@@ -75,11 +97,21 @@ function Time() {
         <div className="time-left">
           <h3>Time</h3>
           {hours.map((hour, index) => (
-            <div key={index} className="hour-box">
+            <div
+              key={index}
+              className="hour-box"
+              draggable
+              onDragStart={(e) => onHourDragStart(e, index)}
+              onDragOver={(e) => e.preventDefault()}
+              onDrop={(e) => handleHourDrop(e, index)}
+            >
               <span>{hour}</span>
+
               <select onMouseDown={(e) => e.stopPropagation()}>
                 {['00', '05', '10', '15', '20', '25', '30', '35', '40', '45', '50', '55'].map((m) => (
-                  <option key={m} value={m}>{m}</option>
+                  <option key={m} value={m}>
+                    {m}
+                  </option>
                 ))}
               </select>
             </div>

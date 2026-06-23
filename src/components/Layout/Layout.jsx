@@ -16,7 +16,7 @@ function Layout() {
 
                 <h1 className={styles.logo}>EraPlanner</h1>
                 <p className={styles.logo1}>Organize. Progress. Thrive. Your Time, Optimized.</p>
-                <hr className={styles.hr} />
+                {/* <hr className={styles.hr} /> */}
 
 
             </header>

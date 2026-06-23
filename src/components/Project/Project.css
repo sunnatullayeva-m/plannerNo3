@@ -11,7 +11,7 @@
 }
 
 .main-textarea {
-width: 500px;
+  width: 500px;
   height: 40px;
   resize: none;
 }
@@ -38,18 +38,18 @@ width: 500px;
 }
 
 .project-wrapper {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px;
 }
 
 .column {
-    width: 700px;
-    min-height: 500px;
-    background: #e5e0dc;
-    padding: 15px;
-    border-radius: 8px;
+  width: 700px;
+  min-height: 500px;
+  background: #e5e0dc;
+  padding: 15px;
+  border-radius: 8px;
 }
 
 .main-textarea {
@@ -70,69 +70,70 @@ width: 500px;
 }
 
 .board {
-    border: 2px dashed #c49a96;
-    background: #f4efed;
+  border: 2px dashed #c49a96;
+  background: #f4efed;
 }
 
-.add-btn{
+.add-btn {
   color: grey;
 }
 
 .item {
-    padding: 10px;
-    margin-bottom: 8px;
-    background: white;
-    border-radius: 4px;
-    cursor: grab;
+  padding: 10px;
+  margin-bottom: 8px;
+  background: white;
+  border-radius: 4px;
+  cursor: grab;
 }
 
 .item-full {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 10px;
 }
 
 .drag-handle {
-    cursor: grab;
-    padding: 5px;
-    color: #888;
+  cursor: grab;
+  padding: 5px;
+  color: #888;
 }
 
 textarea {
-    flex-grow: 1;
-    padding: 8px;
-    resize: none;
-    border-radius: 4px;
-    border: 1px solid #ddd;
+  flex-grow: 1;
+  padding: 8px;
+  resize: none;
+  border-radius: 4px;
+  border: 1px solid #ddd;
 }
 
 .item-full.done textarea {
-    background: #c3e6cb !important;
+  background: #c3e6cb !important;
 }
 
 button {
-    border: none;
-    background: none;
-    cursor: pointer;
-    font-size: 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 16px;
 }
 
-.Project{
-font-family: Arial, Helvetica, sans-serif;
-font-size: 25px;
+.Project {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
   color: rgb(80, 78, 78);
 
 }
 
-.enter{
-    width: 500px;
-    height: 80px;
-      background: #d08171;
-      color: rgb(237, 228, 228);
-      border-radius: 40px;
-      font-size: 25px;
-   margin-left: 500px;
+.enter {
+  width: 500px;
+  height: 80px;
+  background: #d08171;
+  color: rgb(237, 228, 228);
+  border-radius: 40px;
+  font-size: 25px;
+  display: block;
+  margin: 30px auto;
 
 }
 
@@ -145,14 +146,17 @@ font-size: 25px;
 
 /* 5 ta input uchun container */
 .sub-inputs-container {
-  display: flex; /* Yoki grid */
-  gap: 5px;      /* Inputlar orasidagi masofa */
+  display: flex;
+  /* Yoki grid */
+  gap: 5px;
+  /* Inputlar orasidagi masofa */
   width: 100%;
 }
 
 /* Har bir kichik input */
 .mini-input {
-  flex: 1;       /* Hammasi bir xil kenglikda bo'ladi */
+  flex: 1;
+  /* Hammasi bir xil kenglikda bo'ladi */
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -161,7 +165,8 @@ font-size: 25px;
 /* Vazifa kartasini tartibga solish */
 .item-full {
   display: flex;
-  flex-wrap: wrap; /* Agar joy yetmasa pastga tushiradi */
+  flex-wrap: wrap;
+  /* Agar joy yetmasa pastga tushiradi */
   align-items: center;
   gap: 5px;
   padding: 10px;
@@ -198,18 +203,21 @@ font-size: 25px;
 /* --- Planshet versiyasi (1024px dan kichik) --- */
 @media screen and (max-width: 1024px) {
   .project-wrapper {
-    flex-direction: column; /* Ustunlarni bir-birining ustiga qo'yamiz */
+    flex-direction: column;
+    /* Ustunlarni bir-birining ustiga qo'yamiz */
     padding: 20px;
     width: 400px;
   }
 
   .column {
-    width: 100%; /* Kenglikni 100% ga o'tkazamiz */
+    width: 100%;
+    /* Kenglikni 100% ga o'tkazamiz */
     min-height: auto;
   }
 
   .item-full {
-    width: 100%; /* Kartalar ekran kengligiga moslashadi */
+    width: 100%;
+    /* Kartalar ekran kengligiga moslashadi */
   }
 
   .main-textarea {
@@ -223,41 +231,38 @@ font-size: 25px;
 }
 
 /* --- Mobil versiyasi (600px dan kichik) --- */
-@media screen and (max-width: 500px) {
-  .project-wrapper {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 100px; /* Tugma uchun pastdan joy ajratamiz */
-    overflow-y: auto;      /* Agar sahifa uzun bo'lsa scroll bo'lishi uchun */
-  }
 
-  .enter {
-    position: fixed;       /* Tugmani ekranning pastiga qotiramiz */
-    bottom: 80px;          /* Footer (navigatsiya) ustida turishi uchun */
-    left: 50%;
-    width: 200px;
-    height: 60px;
-    font-size: 20px;
-    transform: translateX(-50%); /* Markazga joylash */
-    width: 80% !important;
-    z-index: 100;          /* Boshqa elementlar ustida bo'lishi uchun */
-    margin-left: 0;
+@media screen and (max-width: 600px) {
+  .project-wrapper {
+    flex-direction: column;
+    padding: 10px;
+    padding-bottom: 20px;
   }
 
   .column {
-    width: 100%;       /* Ustunlar ekranga moslashadi */
+    width: 100%;
     max-width: 100%;
-    margin-bottom: 20px;
+    box-sizing: border-box;
+    min-height: auto;
   }
 
   .item-full {
-    width: 90%;        /* Ustun ichidagi kartalar biroz kichikroq bo'ladi */
-    margin: 0 auto 10px auto; /* Markazga joylashadi */
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .main-textarea {
-    width: 100%;       /* Textarea kartani to'liq egallaydi */
+    width: 100%;
+    font-size: 14px;
   }
 
- 
+  .enter {
+    width: 90%;
+    max-width: 350px;
+    height: 55px;
+    font-size: 18px;
+    display: block;
+    margin: 20px auto 120px auto;
+  }
 }

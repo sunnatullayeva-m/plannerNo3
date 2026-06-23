@@ -24,7 +24,7 @@
 }
 
 .item-full {
-  width: 200px;
+  width: 10px;
   background: white;
   padding: 15px;
   margin: 10px;
@@ -35,22 +35,22 @@
 
 .time-wrapper {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 40px;
+  gap: 20px;
   padding: 20px;
-  width: 1100px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  margin-left: 200px;
 }
 
 .time-left {
   width: 100px;
-  margin-left: 50px;
+
 }
 
 .time-right {
   width: 650px;
-  margin-left: - 400px;
+  margin-left: -300px;
 }
 
 .hour-box,
@@ -71,8 +71,7 @@
 }
 
 .left-div {
-  width: 700px;
-  background: #e5e0dc;
+  width: 40%;
   border-radius: 8px;
 }
 
@@ -153,44 +152,77 @@
   font-weight: bold;
 }
 
+.time-wrapper {
+  display: flex;
+  gap: 20px;
+  height: calc(100vh - 100px);
+
+}
+
+.left-div {
+  width: 45%;
+}
+
+.time-left {
+  height: 60vh;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.time-right {
+  width: 55%;
+  overflow-y: auto;
+}
+
+.hour-box {
+  min-height: 70px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  padding: 10px;
+  cursor: grab;
+}
+
+.hour-box {
+  min-height: 50px;
+  padding: 8px 10px;
+}
+
 
 @media screen and (max-width: 600px) {
   .time-wrapper {
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-    padding: 5px;
-    width: 500px;
-    margin-left: -5px;
+    width: 100%;
+    margin-left: 0;
+    padding: 10px;
+    gap: 10px;
+    box-sizing: border-box;
   }
 
   .left-div {
-    width: 35% !important;
-    margin: 0 !important;
+    width: 30%;
   }
 
   .time-right {
-    width: 65% !important;
-    margin: 0 !important;
+    width: 70%;
+    margin-left: 0;
   }
 
-
-   .hour-box{
-     width: 100px;
-    padding: 5px 2px;
+  .hour-box {
+    width: 100%;
+    min-height: 45px;
+    margin-left: 0;
+    padding: 5px;
     font-size: 12px;
-    margin-left: -30px;
-   }
- 
+  }
+
   .task-box {
-    width: 250px;
-    padding: 5px 2px;
+    width: 100%;
+    padding: 5px;
     font-size: 12px;
   }
 
   .hour-box select {
-    width: 35px;
-    font-size: 10px;
-    text-align: center;
+    width: 45px;
+    font-size: 11px;
   }
 }

@@ -20,7 +20,7 @@ function Home() {
 
 
                 <button class="era-btn" onClick={handleClick}>
-                    start
+                    
                     <span class="arrow">→</span>
                 </button>
 
