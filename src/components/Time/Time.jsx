@@ -1,4 +1,8 @@
-
+import {
+  DragDropContext,
+  Droppable,
+  Draggable,
+} from "@hello-pangea/dnd";
 import React, { useContext, useEffect, useState } from 'react';
 import { TaskContext } from '../TaskContext/TaskContext';
 import './Time.css';
@@ -27,6 +31,25 @@ function Time() {
     }, 60000);
     return () => clearInterval(interval);
   }, [currentTasks.board]);
+
+
+  const handleHourDragEnd = (result) => {
+    if (!result.destination) return;
+
+    const items = Array.from(hours);
+    const [reorderedItem] = items.splice(
+      result.source.index,
+      1
+    );
+
+    items.splice(
+      result.destination.index,
+      0,
+      reorderedItem
+    );
+
+    setHours(items);
+  };
 
   const onHourDragStart = (e, index) => {
     e.dataTransfer.setData('hourIndex', index);
@@ -96,26 +119,65 @@ function Time() {
       <div className="left-div">
         <div className="time-left">
           <h3>Time</h3>
-          {hours.map((hour, index) => (
-            <div
-              key={index}
-              className="hour-box"
-              draggable
-              onDragStart={(e) => onHourDragStart(e, index)}
-              onDragOver={(e) => e.preventDefault()}
-              onDrop={(e) => handleHourDrop(e, index)}
-            >
-              <span>{hour}</span>
+          <DragDropContext onDragEnd={handleHourDragEnd}>
+            <Droppable droppableId="hours">
+              {(provided) => (
+                <div
+                  ref={provided.innerRef}
+                  {...provided.droppableProps}
+                >
+                  {hours.map((hour, index) => (
+                    <Draggable
+                      key={hour}
+                      draggableId={hour}
+                      index={index}
+                    >
+                      {(provided) => (
+                        <div
+                          className="hour-box"
+                          ref={provided.innerRef}
+                          {...provided.draggableProps}
+                          {...provided.dragHandleProps}
+                        >
+                          <span>{hour}</span>
 
-              <select onMouseDown={(e) => e.stopPropagation()}>
-                {['00', '05', '10', '15', '20', '25', '30', '35', '40', '45', '50', '55'].map((m) => (
-                  <option key={m} value={m}>
-                    {m}
-                  </option>
-                ))}
-              </select>
-            </div>
-          ))}
+                          <select
+                            onMouseDown={(e) =>
+                              e.stopPropagation()
+                            }
+                          >
+                            {[
+                              "00",
+                              "05",
+                              "10",
+                              "15",
+                              "20",
+                              "25",
+                              "30",
+                              "35",
+                              "40",
+                              "45",
+                              "50",
+                              "55",
+                            ].map((m) => (
+                              <option
+                                key={m}
+                                value={m}
+                              >
+                                {m}
+                              </option>
+                            ))}
+                          </select>
+                        </div>
+                      )}
+                    </Draggable>
+                  ))}
+
+                  {provided.placeholder}
+                </div>
+              )}
+            </Droppable>
+          </DragDropContext>
         </div>
       </div>
 

@@ -14,6 +14,10 @@
   gap: 10px;
 }
 
+.hour-box {
+  touch-action: none;
+}
+
 .main-textarea {
   width: 500px;
   flex-grow: 1;
